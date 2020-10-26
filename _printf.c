@@ -23,7 +23,52 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] == '%')
 		{
-			checkformat(format[i]);
+			i++;
+			switch (format[i])
+			{
+				/* Convert char */
+				case 'c':
+					{
+						str[j] = (char)va_arg(arguments, int);
+						j++;
+						break;
+					}
+
+					/* copy string */
+				case 's':
+					{
+						string_copy = va_arg(arguments, char*);
+						_strncpy(&str[j], string_copy);
+						j += _strlen(string_copy);
+						break;
+					}
+
+					/* copy string */
+				case '%':
+					{
+						str[j] = '%';
+						j++;
+						break;
+					}
+
+					/* Convert decimal */
+				case 'd':
+					{
+						_itoa(va_arg(arguments, int), tmp, 10);
+						_strncpy(&str[j], tmp);
+						j += _strlen(tmp);
+						break;
+					}
+
+					/* Convert decimal */
+				case 'i':
+					{
+						_itoa(va_arg(arguments, int), tmp, 10);
+						_strncpy(&str[j], tmp);
+						j += _strlen(tmp);
+						break;
+					}
+			}
 		}
 		else
 		{
@@ -36,50 +81,4 @@ int _printf(const char *format, ...)
 	write(1, str, j);
 	va_end(arguments);
 	return (j);
-}
-/**
- *checkformat-Checks the format specifier and prints the
- *identified type.
- *@f:Character to check
- *Return:Nothing.
- */
-void checkformat(char f)
-{
-	switch (format[i])
-	{
-	case 'c':
-	{
-		str[j] = (char)va_arg(arguments, int);
-		j++;
-		break;
-	}
-	case 's':
-	{
-		string_copy = va_arg(arguments, char*);
-		_strncpy(&str[j], string_copy);
-		j += _strlen(string_copy);
-		break;
-	}
-	case '%':
-	{
-		str[j] = '%';
-		j++;
-		break;
-	}
-
-	case 'd':
-	{
-		_itoa(va_arg(arguments, int), tmp, 10);
-		_strncpy(&str[j], tmp);
-		j += _strlen(tmp);
-		break;
-	}
-	case 'i':
-	{
-		_itoa(va_arg(arguments, int), tmp, 10);
-		_strncpy(&str[j], tmp);
-		j += _strlen(tmp);
-		break;
-	}
-	}
 }
