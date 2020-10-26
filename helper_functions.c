@@ -1,0 +1,117 @@
+#include "holberton.h"
+
+/**
+ * _strlen - finds len of string
+ * @str: first parameter
+ *
+ * Description: finds len of string
+ * Return: strings len
+ */
+
+int _strlen(const char *str)
+{
+	int len = 0;
+
+	for (; str[len] != '\0'; len++)
+	{
+	}
+
+	return (len);
+}
+
+/**
+ * _strncpy - creates copy of a string
+ * @dest: first parameter
+ * @src: second parameter
+ *
+ * Description: creates copy of string
+ * Return: copy of a string
+ */
+char *_strncpy(char *dest, char *src)
+{
+	int i = 0;
+	int len = 0;
+
+	for (; src[i] != '\0'; i++)
+	{
+		dest[i] = src[i];
+		len++;
+	}
+
+	while (i < len)
+	{
+		dest[i] = '\0';
+		i++;
+	}
+
+	return (dest);
+}
+
+/**
+ * _strrev - reverses a string
+ * @str: first parameter
+ *
+ * Description: reverses a string
+ * Return: reverse string
+ */
+char *_strrev(char *str)
+{
+	int i;
+	int len = 0;
+	char temp;
+
+	if (!str)
+		return (NULL);
+
+	while (str[len] != '\0')
+	{
+		len++;
+	}
+
+	for (i = 0; i < (len / 2); i++)
+	{
+		temp = str[i];
+		str[i] = str[len - i - 1];
+		str[len - i - 1] = temp;
+	}
+	return (str);
+}
+
+/**
+ * _itoa - converts integer to string type
+ * @i: first parameter
+ * @strout: second parameter
+ * @base: third parameter
+ *
+ * Description: converts integer to string type
+ * Return: string type
+ */
+char *_itoa(int i, char *strout, int base)
+{
+	char *str = strout;
+	int digit, sign = 0;
+
+	if (i < 0)
+	{
+		sign = 1;
+		i *= -1;
+	}
+
+	while (i)
+	{
+		digit = i % base;
+		*str = (digit > 9) ? ('A' + digit - 10) : '0' + digit;
+		i = i / base;
+		str++;
+	}
+
+	if (sign)
+	{
+		*str++ = '-';
+	}
+
+	*str = '\0';
+	_strrev(strout);
+	return (strout);
+}
+
