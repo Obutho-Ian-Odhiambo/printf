@@ -23,7 +23,7 @@ int _printf(const char *format, ...)
 	{
 		free(str);
 		free(tmp);
-		return (NULL);
+		return (-1);
 	}
 
 	while (format && format[i])
