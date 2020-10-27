@@ -14,7 +14,7 @@ int _printf(const char *format, ...)
 	char *string_copy;
 
 	va_start(arguments, format);
-	space_allocation = _strlen(format);
+	space_allocation = 1024;
 
 	str = malloc(sizeof(char) * space_allocation);
 	tmp = malloc(sizeof(char) * space_allocation / 2);
@@ -25,9 +25,6 @@ int _printf(const char *format, ...)
 		free(tmp);
 		return (-1);
 	}
-
-	if (format == NULL || arguments == NULL)
-		return (-1);
 
 	while (format && format[i])
 	{
