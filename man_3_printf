@@ -1,0 +1,36 @@
+.\" Manpage for _printf.
+.\" Contact david.k.mutune@gmail.com or iobutho17@alustudent.com to correct anything.
+.TH man 2 "27 October 2020" "version 1.0" "_printf man page"
+.SH NAME
+_printf
+.SH SYNOPSIS
+#include "holberton.h"
+
+#include <stdio.h>
+
+#include <stdarg.h>
+
+.SH DESCRIPTION
+_printf writes to the standard output according to a formart specifier.
+
+_printf function prototype:
+
+int _printf(const char *format, ...)
+
+.SS Return value
+_printf returns the total number of characters printed(null byte excluded) if successful.
+If an error occurs _printif returns a negative value.
+
+.SS Format of the format string
+The format specification is introduced by the character %. it is followed by an
+optional precision, optional minimum field width and optional length modifier.
+
+"%%" prints a single "%".
+"%i" prints an integer.
+"%d" prints a decimal.
+
+
+.SH BUGS
+No known bugs.
+.SH AUTHOR
+David Mutune - Ian Odhiambo.
