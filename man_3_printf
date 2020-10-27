@@ -28,7 +28,7 @@ optional precision, optional minimum field width and optional length modifier.
 "%%" prints a single "%".
 "%i" prints an integer.
 "%d" prints a decimal.
-
+"%s" prints a string.
 
 .SH BUGS
 No known bugs.
