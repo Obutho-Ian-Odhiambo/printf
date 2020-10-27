@@ -1,3 +1,4 @@
 PRINTF
 
-Peer project with David Mutune
+Creating a printf function from scratch.
+Project done with David Mutune.
