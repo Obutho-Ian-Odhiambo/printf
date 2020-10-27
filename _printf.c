@@ -19,6 +19,13 @@ int _printf(const char *format, ...)
 	str = malloc(sizeof(char) * space_allocation);
 	tmp = malloc(sizeof(char) * space_allocation / 2);
 
+	if (str == NULL || tmp == NULL)
+	{
+		free(str);
+		free(tmp);
+		return (-1);
+	}
+
 	while (format && format[i])
 	{
 		if (format[i] == '%')
