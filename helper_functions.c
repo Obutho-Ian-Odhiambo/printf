@@ -5,7 +5,7 @@
  * @str: first parameter
  *
  * Description: finds len of string
- * Return: strings len
+ * Return: strings length
  */
 
 int _strlen(const char *str)
