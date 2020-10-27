@@ -6,7 +6,7 @@ char *_strrev (char *str);
 char * _itoa(int i, char *strout, int base);
 int _printf(const char *format, ...);
 #include <stdlib.h>
-#include <stdarg.h>
 #include <unistd.h>
 #include <stdio.h>
+#include <stdarg.h>
 #endif
