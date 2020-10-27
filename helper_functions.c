@@ -48,7 +48,8 @@ char *_strncpy(char *dest, char *src)
 }
 
 /**
- * _strrev - reverses a string
+ * _strrev - reverses a string incuding the null terminating character
+ *as part of the reversed string.
  * @str: first parameter
  *
  * Description: reverses a string
