@@ -26,6 +26,9 @@ int _printf(const char *format, ...)
 		return (-1);
 	}
 
+	if (format == NULL || arguments == NULL)
+		return (-1);
+
 	while (format && format[i])
 	{
 		if (format[i] == '%')
@@ -87,6 +90,5 @@ int _printf(const char *format, ...)
 
 	write(1, str, j);
 	va_end(arguments);
-	free (str);
 	return (j);
 }
