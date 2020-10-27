@@ -59,7 +59,7 @@ int _printf(const char *format, ...)
 					}
 
 					/* Convert decimal */
-				case 'd':
+				case 'd' || 'i':
 					{
 						_itoa(va_arg(arguments, int), tmp, 10);
 						_strncpy(&str[j], tmp);
@@ -67,14 +67,6 @@ int _printf(const char *format, ...)
 						break;
 					}
 
-					/* Convert decimal */
-				case 'i':
-					{
-						_itoa(va_arg(arguments, int), tmp, 10);
-						_strncpy(&str[j], tmp);
-						j += _strlen(tmp);
-						break;
-					}
 			}
 		}
 		else
