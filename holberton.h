@@ -1,5 +1,5 @@
-#ifndef _HOLBERTON_H_
-#define _HOLBERTON_H_
+#ifndef _HOLBERTON
+#define _HOLBERTON
 int _strlen(const char *str);
 char *_strncpy(char *dest, char *src);
 char *_strrev (char *str);
