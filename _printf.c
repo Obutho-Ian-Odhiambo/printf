@@ -23,7 +23,7 @@ int _printf(const char *format, ...)
 	{
 		free(str);
 		free(tmp);
-		return (-1);
+		return (NULL);
 	}
 
 	while (format && format[i])
@@ -87,5 +87,6 @@ int _printf(const char *format, ...)
 
 	write(1, str, j);
 	va_end(arguments);
+	free (str);
 	return (j);
 }
