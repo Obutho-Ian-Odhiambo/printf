@@ -35,37 +35,43 @@ int _printf(const char *format, ...)
 			{
 				/* Convert char */
 				case 'c':
-					{
+				{
 						str[j] = (char)va_arg(arguments, int);
 						j++;
 						break;
-					}
+				}
 
 					/* copy string */
 				case 's':
-					{
+				{
 						string_copy = va_arg(arguments, char*);
 						_strncpy(&str[j], string_copy);
 						j += _strlen(string_copy);
 						break;
-					}
+				}
 
 					/* copy string */
 				case '%':
-					{
+				{
 						str[j] = '%';
 						j++;
 						break;
-					}
+				}
 
 					/* Convert decimal */
-				case 'd' || 'i':
-					{
+			case 'd':
+				{
 						_itoa(va_arg(arguments, int), tmp, 10);
 						_strncpy(&str[j], tmp);
 						j += _strlen(tmp);
 						break;
-					}
+				}
+			case 'i':
+			{
+				_itoa(va_arg(arguments, int), tmp, 10);
+				_strncpy(&str[j], tmp);
+				j += _strlen(tmp);
+				break;
 
 			}
 		}
