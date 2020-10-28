@@ -75,16 +75,17 @@ int _printf(const char *format, ...)
 
 					}
 			}
-			else
-			{
-				str[j] = format[i];
-				j++;
-			}
-			i++;
 		}
-
-		write(1, str, j);
-		va_end(arguments);
-		return (j);
+		else
+		{
+			str[j] = format[i];
+			j++;
+		}
+		i++;
 	}
+
+	write(1, str, j);
+	va_end(arguments);
+	return (j);
+}
 }
